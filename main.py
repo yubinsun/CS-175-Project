@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
 
     t.add_agent(simple_agent())
-    t.start()
+    # t.start()
 
 
 # If you want to use your own mrkt_data format:
@@ -23,7 +23,7 @@ def mrkt_data_example(self, args,time = 0 ):
     # ......
     self.time  = time # time here is only as a reference. Use with discretion
 # pass this function to cos_mrkt_data parameter of trade_platform
-example = trade_platform(length=5000, data_path='sample_data/a.csv', enable_plot=False,random=False,cos_mrkt_data= mrkt_data_example)
+# example = trade_platform(length=5000, data_path='[PATH HERE]', enable_plot=False,random=False,cos_mrkt_data= mrkt_data_example)
 
 '''/*
  * Synchronous(default) / Asynchronous(deprecated)
