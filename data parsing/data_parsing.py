@@ -6,6 +6,6 @@ returns dataframe of just open, high, low, close, volume being optional
 def parse(csv, volume = False):
     df = pandas.read_csv(csv)
     if not volume:
-        return df[["<OPEN>", "<HIGH>", "<LOW>","<CLOSE>"]]
+        return df[["<OPEN>", "<HIGH>", "<LOW>","<CLOSE>"]].values
     else:
-        return df[["<OPEN>", "<HIGH>", "<LOW>","<CLOSE>", "<VOL>"]]
+        return df[["<OPEN>", "<HIGH>", "<LOW>","<CLOSE>", "<VOL>"]].values
