@@ -1,7 +1,7 @@
 
-from Trade_platform.src.agent.simple_agent import simple_agent
-from Trade_platform.src.agent.agent_thread import agent_thread
-from Trade_platform.src.trade_platform.trade_platform import trade_platform
+from trade_platform.src.agent.simple_agent import simple_agent
+from trade_platform.src.agent.agent_thread import agent_thread
+from trade_platform.src.trade_platform.trade_platform import trade_platform
 
 if __name__ == "__main__":
     t = trade_platform(length=5000, data_path='Trade_platform/sample_data/a.csv', enable_plot=False,random=False)
@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
 
     t.add_agent(simple_agent())
-    # t.start()
+    t.start()
 
 
 # If you want to use your own mrkt_data format:
@@ -27,8 +27,8 @@ def mrkt_data_example(self, args,time = 0 ):
 
 '''/*
  * Synchronous(default) / Asynchronous(deprecated)
- * Market / Agent 
- *    
+ * Market / Agent
+ *
  * Trade platform
  *
 */'''
