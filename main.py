@@ -1,14 +1,15 @@
-
+from trade_platform.src.agent.tcn_agent import tcn_agent
 from trade_platform.src.agent.simple_agent import simple_agent
 from trade_platform.src.agent.agent_thread import agent_thread
 from trade_platform.src.trade_platform.trade_platform import trade_platform
 
 if __name__ == "__main__":
-    t = trade_platform(length=5000, data_path='Trade_platform/sample_data/a.csv', enable_plot=False,random=False)
+    t = trade_platform(length=5000, data_path='data/US1.ABT_190504_200519.txt', enable_plot=False,random=False, type = "minute")
     # when inport csv or other data file, be sure to remove the headers.
 
-
-    t.add_agent(simple_agent())
+    trained_agent = tcn_agent(trainset = 200, arima = False, model='1', moments=33)
+    #trained_agent.train('data/US1.ATVI_200505_200507.txt')
+    t.add_agent(trained_agent)
     t.start()
 
 
